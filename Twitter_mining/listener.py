@@ -6,10 +6,10 @@ from tweepy import OAuthHandler
 from tweepy import Stream
 
 # Variable use to connect to Twitter API
-consumer_key = "95mqN13a7dGLsGCxQEdcDN56V"
-consumer_secret = "V9jHGwptqTVeEksIY4mwt31SXEIZykaQyfRPFrOqroX7WQj0AC"
-access_token = "786739082-lE7EdD3kAHTdwwpAgBmEXmYXnp0yVUgxhv0n4lCG"
-access_secret = "BpfPIjiQNHn24foz85D2vcDe4FWTCh315dL9iZ32njCUX"
+consumer_key = "QNGoTRr1KglswApSQDB8k6R5z"
+consumer_secret = "7s8N5gS09aebqNCrSBm7lskzUfD1Vz9rxqW3d9kJsxBOpbxCgm"
+access_token = "826541604316053504-XVag5sKqfW0rCde6Mq9jqiKuvDQoAZq"
+access_secret = "a6zp37nJjfq1rumB8eulYMQS25JtfiuAmDT9EZT0XYZD6"
 
 # File that we will print collected tweet in
 path = 'data.txt'
