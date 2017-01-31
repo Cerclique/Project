@@ -1,6 +1,12 @@
+#-----------------------------------------------------------------------------#
+#   File : listener.py                                                        #
+#                                                                             #
+#   Purpose : Collect relevant tweet using Twitter API and Tweepy library     #
+#             Store them into text file for later processing                  #
+#-----------------------------------------------------------------------------#
+
 # -*- coding:Utf-8 -*-
 
-# Library use for stream listenning
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
@@ -11,7 +17,7 @@ consumer_secret = "7s8N5gS09aebqNCrSBm7lskzUfD1Vz9rxqW3d9kJsxBOpbxCgm"
 access_token = "826541604316053504-XVag5sKqfW0rCde6Mq9jqiKuvDQoAZq"
 access_secret = "a6zp37nJjfq1rumB8eulYMQS25JtfiuAmDT9EZT0XYZD6"
 
-# File that we will print collected tweet in
+# File that will contain collected tweet
 path = 'data.txt'
 file = open(path, "w")
 
@@ -30,7 +36,7 @@ if __name__ == '__main__':
 
     listener = Listener()
 
-    # Connect to the API
+    # Connect to Twitter API
     auth = OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_secret)
     stream = Stream(auth, listener)
