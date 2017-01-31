@@ -42,4 +42,4 @@ if __name__ == '__main__':
     stream = Stream(auth, listener)
 
     # Filter to collect data from Twitter
-    stream.filter(track=["3d printer", "3d printed", "3d printing", "impression 3d", u"imprimé 3d", "imprimante 3d"])
+    stream.filter(track=["3d printer", "3d printed", "3d printing", "impression 3d", u"imprim\xc3 3d", "imprimante 3d"])
