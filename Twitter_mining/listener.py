@@ -7,6 +7,7 @@
 
 # -*- coding:Utf-8 -*-
 
+import sys
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
@@ -22,7 +23,7 @@ path = 'data.txt'
 file = open(path, "w")
 
 # Class to deal with tweet/error while collecting
-class Listener(StreamListener):
+class Tweet_listener(StreamListener):
 
     def on_data(self, data):
         file.write(data)
@@ -34,12 +35,22 @@ class Listener(StreamListener):
 
 if __name__ == '__main__':
 
-    listener = Listener()
+    tweet_listener = Tweet_listener()
 
     # Connect to Twitter API
     auth = OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_secret)
-    stream = Stream(auth, listener)
+    stream = Stream(auth, tweet_listener)
 
     # Filter to collect data from Twitter
-    stream.filter(track=["3d printer", "3d printed", "3d printing", "impression 3d", u"imprim\xc3 3d", "imprimante 3d"])
+    stream.filter(track=["3d printer", "3d printed", "3d printing", "impression 3d", u"imprim\xc3 3d", "imprimante 3d"], async =True)
+
+    user_input = ""
+    while not user_input.lower() == "q":
+        user_input = raw_input('Type Q to end the collect process : ')
+
+    print("----- Collecting last data")
+    stream.disconnect()
+    print("----- Stream closed")
+    print("----- Ending script")
+    sys.exit()
