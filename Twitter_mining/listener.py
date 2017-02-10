@@ -45,10 +45,12 @@ if __name__ == '__main__':
     # Filter to collect data from Twitter
     stream.filter(track=["3d printer", "3d printed", "3d printing", "impression 3d", u"imprim\xc3 3d", "imprimante 3d"], async =True)
 
+    # Input to close Strea/Script
     user_input = ""
     while not user_input.lower() == "q":
         user_input = raw_input('Type Q to end the collect process : ')
 
+    # Process of closing
     print("----- Collecting last data")
     stream.disconnect()
     print("----- Stream closed")

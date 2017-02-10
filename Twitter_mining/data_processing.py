@@ -9,7 +9,6 @@ import json
 import pandas as pd
 import re
 import time
-from StyleFrame import StyleFrame
 ###############  FUNCTION  ####################################################
 
 # Function that extract link from relevant tweet
