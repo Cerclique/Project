@@ -37,9 +37,10 @@ class Tweet_listener(StreamListener):
 
 if __name__ == '__main__':
 
+    # Creating listener object
     tweet_listener = Tweet_listener()
 
-    # Connect to Twitter API
+    # Connecting to Twitter API
     auth = OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_secret)
     stream = Stream(auth, tweet_listener)
@@ -47,14 +48,14 @@ if __name__ == '__main__':
     # Filter to collect data from Twitter
     stream.filter(track=["3d printer", "3d printed", "3d printing", "impression 3d", u"imprimé 3d", "imprimante 3d"], async =True)
 
-    # Input to close Strea/Script
+    # Waiting for correct user input to close Stream/Script
     user_input = ""
     while not user_input.lower() == "q":
         user_input = raw_input('Type Q to end the collecting process : ')
 
     # Process of closing
-    print("----- Collecting last data")
+    print("   --> Collecting last data")
     stream.disconnect()
-    print("----- Stream closed")
-    print("----- Ending script")
+    print("   --> Stream closed")
+    print("   --> Ending script")
     sys.exit()
