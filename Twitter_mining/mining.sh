@@ -10,7 +10,3 @@ echo "----- End of data processing -----"
 echo "----- Opening Excel file -----"
 
 `libreoffice *.xlsx`
-#for file in *.xlsx
-#do
-#  libreoffice $file
-#done
