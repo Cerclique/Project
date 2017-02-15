@@ -1,5 +1,7 @@
+# -*- encoding:Utf-8 -*-
+
 #-----------------------------------------------------------------------------#
-#   Author : VERNIZEAU Aurélien
+#   Author : VERNIZEAU Aurélien                                               #
 #   File : data_processing.py                                                 #
 #                                                                             #
 #   Purpose : Process data collected by listener.py and store relevant        #
