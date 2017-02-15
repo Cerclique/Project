@@ -1,3 +1,5 @@
+# -*- encoding:Utf-8 -*-
+
 #-----------------------------------------------------------------------------#
 #   Author : VERNIZEAU Aurélien
 #   File : listener.py                                                        #
@@ -6,7 +8,6 @@
 #             Store them into text file for later processing                  #
 #-----------------------------------------------------------------------------#
 
-# -*- coding:Utf-8 -*-
 
 import sys
 from tweepy.streaming import StreamListener
@@ -44,7 +45,7 @@ if __name__ == '__main__':
     stream = Stream(auth, tweet_listener)
 
     # Filter to collect data from Twitter
-    stream.filter(track=["3d printer", "3d printed", "3d printing", "impression 3d", u"imprim\xc3 3d", "imprimante 3d"], async =True)
+    stream.filter(track=["3d printer", "3d printed", "3d printing", "impression 3d", u"imprimé 3d", "imprimante 3d"], async =True)
 
     # Input to close Strea/Script
     user_input = ""
