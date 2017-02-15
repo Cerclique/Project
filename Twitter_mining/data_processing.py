@@ -43,12 +43,14 @@ data_file_path = 'data.txt'
 file = open(data_file_path, "r")
 
 tweet_data = []
+
 for line in file:
     try:
         data = json.loads(line)
         tweet_data.append(data)
     except:
         continue
+
 # Create DataFrame
 tweets = pd.DataFrame()
 # Display untruncated information
@@ -78,7 +80,7 @@ tweets = tweets.drop('rt', 1)
 # Re-index the entire DataFrame for clearness
 tweets.reset_index(drop = True, inplace = True)
 
-# Create a Pandas Excel writer using XlsxWriter as the engine.e
+# Create a Pandas Excel writer using XlsxWriter as the engine.
 writer = pd.ExcelWriter(get_date() + ".xlsx", engine='xlsxwriter')
 
 # Convert the DataFrame to an Excel object
