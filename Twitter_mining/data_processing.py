@@ -1,4 +1,5 @@
 #-----------------------------------------------------------------------------#
+#   Author : VERNIZEAU Aurélien
 #   File : data_processing.py                                                 #
 #                                                                             #
 #   Purpose : Process data collected by listener.py and store relevant        #
@@ -32,6 +33,7 @@ def get_date():
     return time.strftime("%d-%B-%Y-%H-%M-%S")
 
 ##############  CORE  #########################################################
+
 # Define the path
 data_file_path = 'data.txt'
 

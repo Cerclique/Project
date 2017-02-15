@@ -1,4 +1,5 @@
 #-----------------------------------------------------------------------------#
+#   Author : VERNIZEAU Aurélien
 #   File : listener.py                                                        #
 #                                                                             #
 #   Purpose : Collect relevant tweet using Twitter API and Tweepy library     #
@@ -48,7 +49,7 @@ if __name__ == '__main__':
     # Input to close Strea/Script
     user_input = ""
     while not user_input.lower() == "q":
-        user_input = raw_input('Type Q to end the collect process : ')
+        user_input = raw_input('Type Q to end the collecting process : ')
 
     # Process of closing
     print("----- Collecting last data")
