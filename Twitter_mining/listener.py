@@ -1,7 +1,7 @@
 # -*- encoding:Utf-8 -*-
 
 #-----------------------------------------------------------------------------#
-#   Author : VERNIZEAU Aurélien
+#   Author : VERNIZEAU Aurélien                                               #
 #   File : listener.py                                                        #
 #                                                                             #
 #   Purpose : Collect relevant tweet using Twitter API and Tweepy library     #
