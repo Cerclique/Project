@@ -13,6 +13,7 @@ import sys
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
+from blessed import Terminal
 
 # Variable use to connect to Twitter API
 consumer_key = "QNGoTRr1KglswApSQDB8k6R5z"
@@ -22,7 +23,7 @@ access_secret = "a6zp37nJjfq1rumB8eulYMQS25JtfiuAmDT9EZT0XYZD6"
 
 # File that will contain collected tweet
 path = 'data.txt'
-file = open(path, "w")
+data_file = open(path, "w")
 
 # Class to deal with tweet/error while collecting
 class Tweet_listener(StreamListener):
@@ -45,17 +46,21 @@ if __name__ == '__main__':
     auth.set_access_token(access_token, access_secret)
     stream = Stream(auth, tweet_listener)
 
+    term = Terminal()
     # Filter to collect data from Twitter
-    stream.filter(track=["3d printer", "3d printed", "3d printing", "impression 3d", u"imprimé 3d", "imprimante 3d"], async =True)
+    stream.filter(track=["3d printer", "3d printed", "3d printing", "impression 3d", u"imprimé 3d", "imprimante 3d"], async=True)
 
-    # Waiting for correct user input to close Stream/Script
-    user_input = ""
-    while not user_input.lower() == "q":
-        user_input = raw_input('Type Q to end the collecting process : ')
+    # Wait for the user to stop
+    print "Press 'q' to exit"
+    with term.cbreak():
+        val = None
+        while val not in (u'q', u'Q',):
+            val = term.inkey()
 
     # Process of closing
-    print("   --> Collecting last data")
+    print "   --> Collecting last data"
     stream.disconnect()
-    print("   --> Stream closed")
-    print("   --> Ending script")
+    print "   --> Stream closed"
+    print "   --> Ending script"
+
     sys.exit()
